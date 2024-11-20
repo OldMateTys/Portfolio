@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 
 function App() {
   return (
@@ -12,6 +13,32 @@ function App() {
     </div>
   );
 }
+
+function searchBar() {
+
+}
+
+function productTable(json_info) {
+
+  const [ info, setInfo ] = useState()
+  for (int i = 0; i < json_info.length; i++) {
+
+  }
+  return (
+    <>
+      <div className='flex-container'>
+        <div className='item'>Name</div>
+        <div className='item'>Price</div>
+      </div>
+      <SubTable values={json_info[0]}> </SubTable>
+    </>
+  );
+}
+
+function SubTable() {
+  return ();
+}
+
 
 
 export default App;
