@@ -1,21 +1,23 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import data from './data.json';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
+
 function App() {
+
+
+
   return (
-    <Router>
-      <Header />
-      <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+    <div className='site custom-scroll'>
+        <Header />
+        <div style={{display: 'flex', flexDirection: 'column'}}>
+          <About />
+          <Projects />
+          <Contact />
+        </div>
+    </div>
 
   );
 }
@@ -23,23 +25,14 @@ function App() {
 
 function Header() {
 
-  const navigate = useNavigate();
-
-  function handleNavigation(i) {
-    if (i === 0) navigate("/");
-    if (i === 1) navigate("/projects");
-    if (i === 2) navigate("/about");
-    if (i === 3) navigate("/contact");
-  }
-
   return (
     <div className="header" >
-      <h1 className='logo'>Tyson Jelicich | Software Developer</h1>
+      <h1 className={`logo`}>Tyson Jelicich</h1>
+      <p className='title'>Back-end Engineer</p>
       <div className='nav'>
-        <button type='button' className='button' onClick={() => handleNavigation(0)}>Home</button>
-        <button type='button' className='button' onClick={() => handleNavigation(1)}>Projects</button>
-        <button type='button' className='button' onClick={() => handleNavigation(2)}>About</button>
-        <button type='button' className='button' onClick={() => handleNavigation(3)}>Contact</button>
+        <button type='button' className='button p1'>About</button>
+        <button type='button' className='button p1'>Projects</button>
+        <button type='button' className='button p1'>Contact</button>
       </div>
     </div>
   );
@@ -84,8 +77,7 @@ function Projects() {
   return (
     <div className='main'>
       <div className='block'>
-        <h1 className='p title'>Projects</h1>
-        <hr />
+        <h1 className='p heading'>Projects</h1>
         <div className='tileContainer'>
           <Tile i={0} onClick={() => handleClick(0)} />
           <Tile i={1} onClick={() => handleClick(1)} />
@@ -97,18 +89,15 @@ function Projects() {
   
 }
 
-function Home() {
-  return (
-    <div className='main'>
-      <p className='p'>hello</p>
-    </div>
-  );
-}
-
 function About() {
   return (
     <div className='main'>
-
+      <div className='block'>
+      <div className='p heading'>About</div>
+      <br />
+      <div className='aboutText'>I am a developer passionate about solving complex problems through thoughtful, high-performance engineering. My current focus lies in transitioning to a career in software development, with a deep interest in low-latency systems and the underlying architectures that power them. My goal is to design and build robust, scalable solutions that combine technical excellence with real-world impact.<br /> <br/>
+Currently, I am pursuing a Bachelor of Science in Computer Science at the University of Sydney, where I maintain a High Distinction average (86 WAM). I also hold a Bachelor of Commerce in Finance from Macquarie University, which complements my technical skills with a strong foundation in financial principles. My combined expertise uniquely positions me to tackle challenges in algorithmic trading, distributed systems, and performance-critical software.</div>
+      </div>    
     </div>
   );
 }
