@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import data from './data.json';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,6 +23,53 @@ function App() {
 }
 
 
+function RotatingCube() {
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    let animationFrame;
+
+    const rotate = () => {
+      setRotation((prev) => ({
+        x: prev.x + 0.5, // Increment X-axis rotation
+        y: prev.y + 0.5, // Increment Y-axis rotation
+      }));
+      animationFrame = requestAnimationFrame(rotate);
+    };
+
+    rotate(); // Start the animation
+
+    return () => cancelAnimationFrame(animationFrame); // Cleanup on unmount
+  }, []);
+  const faces = [
+    { className: "front", char: "$" },
+    { className: "back", char: "#" },
+    { className: "left", char: "%" },
+    { className: "right", char: "&" },
+    { className: "top", char: "+" },
+    { className: "bottom", char: "@" },
+  ];
+  return (
+    <div className="container">
+      <div
+        className="cube"
+        style={{
+          transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`, // Multi-axis rotation
+        }}
+      >
+        {faces.map((face, index) => (
+          <div className={`aboutText face ${face.className}`} key={index}>
+            {Array.from({ length: 100 }).map((_, idx) => (
+              <span key={idx}>{face.char}</span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
 function Header() {
 
   return (
@@ -34,11 +81,25 @@ function Header() {
         <button type='button' className='button p1'>Projects</button>
         <button type='button' className='button p1'>Contact</button>
       </div>
+      <RotatingCube />
+      <Icons />
     </div>
   );
 }
 
+function Icons() {
 
+  const cv = require('./resources/newspaper.svg');
+  const github = require('./resources/github.svg');
+  const linkedin = require('./resources/linkedin.svg');
+  return(
+    <div className='iconContainer'>
+      <img src={cv} className='icon' alt='Resume' />
+      <img src={github} className='icon' alt='Github' />
+      <img src={linkedin} className='icon' alt='linkedin' />
+    </div>
+  );
+}
 function Projects() {
 
   const [jsonData, setJsonData] = useState(data);
