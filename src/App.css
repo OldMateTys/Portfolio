@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 .App {
   text-align: center;
@@ -13,6 +15,7 @@
 .p {
   font-family: 'NewsReader', serif;
   font-weight: 400;
+  color: #EEEEEE;
 }
 
 .App-logo {
@@ -53,11 +56,11 @@
 .flex-container {
   display:flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0px;
 }
 
 .item {
-  padding: 20px;
+  padding: 0px;
 }
 
 .search-bar {
@@ -70,18 +73,141 @@
   padding: 10px;
 }
 
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #222831;
+}
 .header {
   display: flex;
+  background-color: #393E46;
+  width: 100%;
   justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
+  border-bottom: 2px #222831;
+  position: fixed;
 }
 
 .nav {
   display: flex;
+  border-color: #393E46;
+  
 
 }
 
 .logo {
-  font-size: 32;
+  font-size: 32px;
   font-family: 'NewsReader', serif;
+  font-weight: 400;
+  color: #EEEEEE;
+  margin-left: 30px;
+}
+
+.button {
+  width: 100px;
+  height: 60px;
+  color: #EEEEEE;
+  background-color: #393E46;
+  border: 0cm;
+  transition: 0.5s all;
+  
+}
+
+.main {
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 90%;
+  background-color: #222831;
+  height: 100%;
+  margin-top: 150px;
+
+}
+
+.title {
+  font-size: 40px;
+  color: #EEEEEE;
+
+}
+
+.tileContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.tile {
+  margin-top: 30px;
+  width: 395px;
+  height:444px;
+  background-color: #EEEEEE;
+  border-radius: 5%;
+  border-color: #61dafb;
+  border-width: 3px;
+  border-style: solid;
+  margin-right: 10px;
+  overflow: hidden;
+
+  font-family: 'Inter', serif;
+  transition: all 0.3s;
+
+  caret-color: transparent;
+}
+
+.imageContainer {
+  width: 100%;
+  height:65%;
+  overflow: hidden;
+  align-content: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Add shadow */
+  border-bottom: 2px #222831;
+  
+}
+
+.tileImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10%;
+}
+
+.tileTitle {
+  color: #00ADB5;
+  margin-left: 5%;
+  margin-top: 6%;
+  font-size: 20px;
   font-weight: 700;
+  font-family: 'Inter', serif;
+}
+.tileText {
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-right: 5%;
+  text-align: justify;
+  color: #222831;
+  font-size: 17px;
+  font-family: 'Inter', serif;
+}
+
+.tile:hover {
+  cursor: pointer;
+  background-color: #CCCCCC;
+}
+
+.button:hover {
+  background-color: #222831;
+  cursor: pointer;
 }
