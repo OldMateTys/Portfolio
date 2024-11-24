@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'NewsReader', serif;
+}
+
+.h1 {
+  font-family: 'NewsReader', serif;
+  font-weight: 700;
+}
+
+.p {
+  font-family: 'NewsReader', serif;
+  font-weight: 400;
 }
 
 .App-logo {
@@ -45,4 +58,30 @@
 
 .item {
   padding: 20px;
+}
+
+.search-bar {
+  justify-content: space-between;
+}
+
+.bigTable {
+  border: #282c34;
+  border-width: 5px;
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+
+}
+
+.logo {
+  font-size: 32;
+  font-family: 'NewsReader', serif;
+  font-weight: 700;
 }

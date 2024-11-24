@@ -1,44 +1,70 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
+import data from './data.json';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+  const [jsonInfo, setJsonInfo] = useState(data);
+
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold">Hello, React + Tailwind!</h1>
-      <p>
-        This is a <code>code</code> example.
-      </p>
-      <h1> This is your mum</h1>
-    </div>
+  <>
+    <Router>
+      <Header />
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
+  </>  
   );
 }
 
-function searchBar() {
 
-}
+function Header() {
 
-function productTable(json_info) {
+  const navigate = useNavigate();
 
-  const [ info, setInfo ] = useState()
-  for (int i = 0; i < json_info.length; i++) {
-
+  function handleNavigation(i) {
+    if (i == 0) navigate("/");
+    if (i == 1) navigate("/projects");
+    if (i == 2) navigate("/about");
+    if (i == 3) navigate("/contact");
   }
   return (
     <>
-      <div className='flex-container'>
-        <div className='item'>Name</div>
-        <div className='item'>Price</div>
+      <div className='logo'>Tyson Jelicich | Software Developer</div>
+      <div className='nav'>
+        <button type='button' className='button' onClick={() => handleNavigation(0)}>Home</button>
+        <button type='button' className='button' onClick={() => handleNavigation(1)}>Projects</button>
+        <button type='button' className='button' onClick={() => handleNavigation(2)}>About</button>
+        <button type='button' className='button' onClick={() => handleNavigation(3)}>Contact</button>
       </div>
-      <SubTable values={json_info[0]}> </SubTable>
     </>
   );
 }
 
-function SubTable() {
-  return ();
+
+function Projects() {
+  return (
+    <>
+      <Header className='header' />
+      <Body className='body' />
+    </>
+  );
 }
 
+function Home() {
 
+}
+
+function About() {}
+
+function Contact() {}
+
+function MockStock() {}
 
 export default App;
