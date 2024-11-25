@@ -2,14 +2,20 @@ import './App.css';
 import React, { useState, useEffect, useRef } from 'react';
 import data from './data.json';
 import { useNavigate } from 'react-router-dom';
+import cv from './resources/newspaper.svg';
+import github from './resources/github.svg';
+import linkedin from './resources/linkedin.svg';
 
 
 
 function App() {
 
-
+  useEffect(() => {
+    document.title = "Tyson's Portfolio";
+  }, []);
 
   return (
+    <>
     <div className='site custom-scroll'>
         <Header />
         <div style={{display: 'flex', flexDirection: 'column'}}>
@@ -18,6 +24,7 @@ function App() {
           <Contact />
         </div>
     </div>
+    </>
 
   );
 }
@@ -88,18 +95,26 @@ function Header() {
 }
 
 function Icons() {
+  const cv = "newspaper.svg";
+  const gh = "github.svg";
+  const li = "linkedin.svg";
+  const cvPath = cv ? require(`./resources/${cv}`) : null;
+  const ghPath = gh ? require(`./resources/${gh}`) : null;
+  const liPath = li ? require(`./resources/${li}`) : null
 
-  const cv = require('./resources/newspaper.svg');
-  const github = require('./resources/github.svg');
-  const linkedin = require('./resources/linkedin.svg');
+  function openLink(link) {
+    if (link) window.open(link , "_blank");
+  }
+
   return(
     <div className='iconContainer'>
-      <img src={cv} className='icon' alt='Resume' />
-      <img src={github} className='icon' alt='Github' />
-      <img src={linkedin} className='icon' alt='linkedin' />
+      <img src={cvPath} className='icon' alt='CV' />
+      <img src={ghPath} className='icon' alt='Github' onClick={() => openLink("https://github.com/OldMateTys/")}/>
+      <img src={liPath} className='icon' alt='LinkedIn' onClick={() => openLink("https://www.linkedin.com/in/tyson-jelicich-a7ba32184/")}/>
     </div>
   );
 }
+
 function Projects() {
 
   const [jsonData, setJsonData] = useState(data);
