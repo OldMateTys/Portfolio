@@ -1,12 +1,9 @@
 # Portfolio showcase - Tyson
 
-This project is a showcase of all my current propjects, with a little information for the uninformed. 
+This project is a showcase of all my current propjects, with an about and contact section for those interested. This was created with the intention of learning the Front-End development languages, in combination with ahnds-on experience of project ideation, implementation and completion. That is no to say that this website is complete and immune from change, but I am satisfied with it's current iteration, as my focus is not on the Front-End space.
 
-
-# Inspo
-
-Inspired by Brittney Chiang's portfolio website here: https://brittanychiang.com/
+The website was heavily inspired by Brittney Chiang's portfolio website, see here: https://brittanychiang.com/
 
 
 # Tech Stack
-JavaScript | React Framework | HTML | CSS
+JavaScript | React | HTML | CSS
