@@ -502,5 +502,9 @@ html, body, #root {
   .tileTitle {
     font-size: 8px;
   }
+
+  .site {
+    width: 90%;
+  }
   
 }
