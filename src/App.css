@@ -557,3 +557,33 @@ textarea {
   }
   
 }
+@media screen and (max-width: 550px) { /* Adjust the max-width as needed */
+
+  .title_box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .headingContainer {
+    justify-items: center;
+    align-items: center;
+  }
+
+  .tileContainer {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tileTitle {
+    font-size: 8px;
+  }
+
+  .site {
+    width: 90%;
+  }
+  
+}
