@@ -514,18 +514,27 @@ textarea {
   }
 }
 
-@media screen and (max-width: 1000px) { /* Adjust the max-width as needed */
+@media screen and (max-width: 650px) { /* Adjust the max-width as needed */
 
-  .tileText{
-    color: transparent;
-  }
-  .imageContainer {
-    height: 80%;
-  }
+.contactBox {
+  width: 400px;
+}
+textarea {
+  width: 200px;
+}
 
-  .tileTitle {
-    font-size: 12px;
-  }
+.bold {
+  font-size: 12px;
+}
+
+.submitButton {
+  width: 206px;
+}
+
+.form {
+  justify-items: center;
+}
+
 }
 @media screen and (max-width: 550px) { /* Adjust the max-width as needed */
 
@@ -549,37 +558,11 @@ textarea {
   }
 
   .tileTitle {
-    font-size: 8px;
+    font-size: 15px;
   }
 
-  .site {
-    width: 90%;
-  }
-  
-}
-@media screen and (max-width: 550px) { /* Adjust the max-width as needed */
-
-  .title_box {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .heading {
-    text-align: center;
-  }
-
-  .headingContainer {
-    justify-items: center;
-    align-items: center;
-  }
-
-  .tileContainer {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .tileTitle {
-    font-size: 8px;
+  .tileText {
+    font-size: 11px;
   }
 
   .site {
