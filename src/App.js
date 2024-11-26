@@ -181,11 +181,13 @@ function Projects({ projectsRef }) {
   return (
     <div className='main'>
       <div className='block'>
-        <h1 className='p heading' ref={projectsRef}>Projects</h1>
-        <div className='tileContainer'>
-          <Tile i={0} onClick={() => handleClick(0)} />
-          <Tile i={1} onClick={() => handleClick(1)} />
-          
+        <div className='headingContainer'>
+          <h1 className='p heading' ref={projectsRef}>Projects</h1>
+          <div className='tileContainer'>
+            <Tile i={0} onClick={() => handleClick(0)} />
+            <Tile i={1} onClick={() => handleClick(1)} />
+            
+          </div>
         </div>
       </div>
     </div>
@@ -312,8 +314,9 @@ function Contact({contactRef}) {
   return (
     <div className='main'>
         <div className='block'>
+        <div className='headingContainer'>
         <div className='p heading' ref={contactRef}>Contact</div>
-        
+        </div>
         </div>
     </div>
   );

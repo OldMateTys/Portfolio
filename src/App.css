@@ -26,6 +26,9 @@
   transform-origin: center; /* Ensure proper rotation */
 }
 
+.block {
+  width: 100%;
+}
 .face {
   position: absolute;
   width: 100px;
@@ -245,6 +248,9 @@ html, body, #root {
   color: #c8cacc ;
 }
 
+.invisText {
+  color:transparent;
+}
 .bold {
   font-weight: 500;
   color: #a2a1aa;
@@ -317,6 +323,9 @@ html, body, #root {
   letter-spacing: 0.04mm;
   justify-content: space-evenly;
   transform: all 0.4s;
+  justify-items: left;
+  text-align: justify;
+  
   
 }
 
@@ -427,6 +436,10 @@ html, body, #root {
   background-color: #393E46;
 }
 
+.headingContainer {
+  width: 100%;
+}
+
 .button:hover {
   background-color: #222831;
   cursor: pointer;
@@ -464,4 +477,30 @@ html, body, #root {
   .tileTitle {
     font-size: 12px;
   }
+}
+@media screen and (max-width: 550px) { /* Adjust the max-width as needed */
+
+  .title_box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .headingContainer {
+    justify-items: center;
+    align-items: center;
+  }
+
+  .tileContainer {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tileTitle {
+    font-size: 8px;
+  }
+  
 }
