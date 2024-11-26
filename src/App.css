@@ -154,8 +154,6 @@ html, body, #root {
   position: fixed;
   width: 350px;
   height: 100vh;
-  right: calc(100%+350px);
-
 }
 
 .nav {
