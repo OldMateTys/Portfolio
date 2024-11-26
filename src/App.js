@@ -194,12 +194,42 @@ function Projects({ projectsRef }) {
 }
 
 function About({aboutRef}) {
-  return (
-    <div className='main'>
-      <div className='block'>
-      <div className='p heading' ref={aboutRef}>About</div>
-      <br />
-      <div className='aboutText'>
+
+  const [ isOn, setIsOn ] = useState(true);
+
+  const toggleState = () => {
+    setIsOn(!isOn);
+  }
+  const overview = (
+    <div className='aboutText'>
+      I am a budding developer who has recently become enamoured with programming,
+      taking a detour from my current role as an Investment Finance Broker towards more technical 
+      creative outlets. I have discovered a deep fascination with low-latency systems and performant 
+      programming, and am currently learning as much as I can in this area. Through this learning 
+      process I aim to create useful tools the enrich those around me.
+      <br></br><br></br>
+      To this end I am studying a Bachelor of Science in Computer Science at the University of Sydney, 
+      performing with High Distinction, whilst engaging in personal projects and study to elevate my skillset.
+      <br></br><br></br>
+      I am currently working on my first decently-sized project, where I am building an algorithmic trading platform, 
+      with the goal of learning how to combine Front-End and Back-End development, alongside learning low-level languages 
+      (predominantly C++) to create value through HFT simulation.
+      <br></br><br></br>
+      Outside of my studies I work in a part-to-full time capacity writing
+      loans for clients, helping local investors understand and implement wealth generation strategies. 
+      <br></br><br></br>
+      If you're interested in collaborating on a project or just want to have a chat, feel free to get 
+      in touch—I'm always keen to connect with like-minded people!
+    </div>
+  );
+
+  const tempStory = (
+    <div className='invisText'>Coming soon... Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...Coming soon...                                                              
+    <br></br><br></br><br></br><br></br><br></br><br></br><br></br></div>
+  );
+
+  const story = (
+    <div className='aboutText'>
       This is the tale of the one they call Tyson.
       <br></br><br></br>
       He is, as his friends say, a person among people. This is not such a bad thing, 
@@ -256,6 +286,23 @@ function About({aboutRef}) {
       </p>
       
     </div>
+  );
+
+  return (
+    <div className='main'>
+      <div className='block'>
+      <div className='title_box'>
+        <div className='p heading' ref={aboutRef}>About</div>
+        <div className='sliding-bar-container' onClick={toggleState}>
+          <div className={`sliding-bar ${isOn ? 'active' : 'inactive'}`}></div>
+          <div className='labelContainer'>
+            <p className='label label1'>Overview</p>
+            <p className='label label2'>Story</p>
+          </div>
+        </div>
+      </div>
+      <br />
+      {isOn ? aboutMe : story}
       </div>    
     </div>
   );
@@ -272,4 +319,70 @@ function Contact({contactRef}) {
   );
 }
 
+const aboutMe = (
+  <div className='aboutText'>
+
+I'm a budding developer who loves tackling challenging problems and building efficient, 
+high-performance systems. After taking a detour from my role as an Investment Finance Broker, 
+I've become enamoured with programming and technical creative outlets. I'm particularly 
+fascinated by the intricacies of low-latency systems and high-performance programming, and 
+I'm currently learning as much as I can in this area. My goal is to deepen my understanding 
+while creating useful tools that enrich those around me.
+<br></br><br></br>
+I'm proficient in Python, Java, JavaScript, React, HTML, CSS, and C++. To expand my knowledge, 
+I'm studying a Bachelor of Science in Computer Science at the University of Sydney, where have
+performed well. I also hold a Bachelor of Commerce in 
+Finance from Macquarie University, which, combined with my technical skills, allows me to approach 
+challenges in algorithmic trading, distributed systems, and performance-critical software 
+from multiple perspectives.
+<p className='bold'>Professional Experience:</p>
+
+My time in finance has given me a strong suite of client management skills and the ability to 
+perform under high-stress scenarios. A significant part of my role involved aiding the firm's 
+integration of new technologies and making tools intuitive and appealing for widespread adoption 
+with minimal friction. During my time there, I implemented HubSpot as a new CRM, creating the 
+finance deal pipeline to track deals for both efficiency and compliance purposes.
+<br></br><br></br>
+
+I also created multiple tools to streamline processes:
+<ul>
+<li>Custom Data Storage System: Provided a one-stop shop for data entry, replacing the need for 
+brokers to enter data into multiple places (CRM, compliance, loan notes). I implemented a 
+ChatGPT wrapper that took the data in the system and automatically outputted a full suite of 
+documentation: loan submission notes, compliance documentation, and formatted CSVs for easy 
+importing into the CRM. This reduced the time taken to create a new application from approximately 
+3 hours to 30 minutes.</li>
+<li>
+Portfolio Modelling Program: Scans the firm's trail book—a record of loans we've written, paid
+on a monthly basis over the life of the loan—and provides an easy way to view the growth in equity 
+of client portfolios. This allows the firm to more easily identify when clients may be ready to invest 
+with us again.</li>
+</ul>
+<p className='bold'>Side Projects:</p>
+<ul>
+<li>
+Portfolio Website: Created a personal portfolio website to gain a deeper understanding of front-end development.
+</li>
+</ul>
+
+<p className='bold'>Current Endeavours:</p>
+
+I'm currently working on my first significant project: building an algorithmic trading platform. My 
+goal is to learn how to combine front-end and back-end development, alongside learning low-level 
+languages (predominantly C++) to create value through high-frequency trading (HFT) simulation.
+
+<p className='bold'>Long-Term Goals:</p>
+
+I aspire to work as a low-latency developer, creating value by optimising performance-critical systems. 
+The problem-solving aspects, mathematical and statistical involvement, and the requirement for 
+incredibly deep understanding have drawn me to this area.
+
+<p className='bold'>Work-Life Balance:</p>
+I currently work part-time (3-4 days during uni, full-time otherwise) and try to surf 3-4 times a 
+week or swim laps when the surf isn't good or the water's too cold. I spend about 2 hours a day 
+expanding my skillset, whether that's working on projects or self-study through books related to my 
+field or coursework. Recent examples include C++ Primer and Effective Modern C++, which I'm using to 
+build a strong, ground-up understanding of low-level languages.
+  </div>
+)
 export default App;

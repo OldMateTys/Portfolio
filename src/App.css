@@ -74,6 +74,80 @@
   margin-top: 20px;
 }
 
+.title_box {
+  display: flex;
+}
+
+/* Container for the sliding bar */
+.sliding-bar-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a393d;
+  border-radius: 25px;
+  width: 200px;
+  height: 30px;
+  border: 2px solid #3d3a3a;
+  cursor: pointer;
+}
+
+/* The sliding bar itself */
+.sliding-bar {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  left: 0%;
+  background-color: #991414;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+/* Active state (on the left) */
+.sliding-bar.active {
+  transform: translateX(0%); /* Stays on the left */
+  background-color: #636863;
+}
+
+/* Inactive state (on the right) */
+.sliding-bar.inactive {
+  transform: translateX(100%); /* Moves to the right */
+  background-color: #636863;
+}
+
+/* Sliding label inside the bar */
+.label {
+  position: relative;
+  width: 10%;
+  background-color: transparent;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 5px;
+  font-weight: bold;
+  color: #EEEEEE;
+  transition: transform 0.3s ease, color 0.3s ease;
+  font-family: 'Inter', serif;
+  font-size: small;
+}
+
+.label1 {
+  margin-left: -2%;
+  text-align: center;
+}
+
+.label2 {
+  margin-right: 20%;
+  text-align: center;
+}
+
+.labelContainer {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  justify-content: space-between;
+  z-index: 1;
+}
 
 
 html.custom-scroll, body.custom-scroll {
@@ -171,6 +245,10 @@ html, body, #root {
   color: #c8cacc ;
 }
 
+.bold {
+  font-weight: 500;
+  color: #a2a1aa;
+}
 .site {
   padding-top: 5%;
   display: flex;
@@ -218,13 +296,14 @@ html, body, #root {
   vertical-align: middle;
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   margin-top: 5%;
   margin-left: 40%;
 }
 
 .heading {
   padding-left: 2%;
+  width: 100px;
   font-size: 30px;
   color: #f7fafc ;
   font-family: 'Inter', serif;
@@ -237,6 +316,7 @@ html, body, #root {
   word-spacing: 0.35mm;
   letter-spacing: 0.04mm;
   justify-content: space-evenly;
+  transform: all 0.4s;
   
 }
 
