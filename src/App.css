@@ -570,3 +570,19 @@ textarea {
   }
   
 }
+
+@media screen and (max-width: 450px) { /* Adjust the max-width as needed */
+
+  .contactBox {
+    width: 300px;
+  }
+
+  .tile {
+    width: 300px;
+  }
+
+  .tileText {
+    font-size: 10px;
+  }
+}
+
