@@ -396,6 +396,7 @@ html, body, #root {
   border-width: 2px;
   border-style: solid;
   overflow: hidden;
+  margin-top: 2%;
 
   font-family: 'Inter', serif;
   transition: all 0.3s;
@@ -512,9 +513,10 @@ textarea {
   .main {
     margin-left: 0; /* Remove the space for the fixed sidebar */
   }
+
 }
 
-@media screen and (max-width: 650px) { /* Adjust the max-width as needed */
+@media screen and (max-width: 750px) { /* Adjust the max-width as needed */
 
 .contactBox {
   width: 400px;
@@ -536,7 +538,7 @@ textarea {
 }
 
 }
-@media screen and (max-width: 550px) { /* Adjust the max-width as needed */
+@media screen and (max-width: 750px) { /* Adjust the max-width as needed */
 
   .title_box {
     flex-direction: column;
@@ -545,6 +547,10 @@ textarea {
 
   .heading {
     text-align: center;
+  }
+
+  .sliding-bar-container {
+    margin-top: 15px;
   }
 
   .headingContainer {
@@ -571,7 +577,7 @@ textarea {
   
 }
 
-@media screen and (max-width: 450px) { /* Adjust the max-width as needed */
+@media screen and (max-width: 480px) { /* Adjust the max-width as needed */
 
   .contactBox {
     width: 300px;
@@ -579,6 +585,7 @@ textarea {
 
   .tile {
     width: 300px;
+    margin-top: 2%;
   }
 
   .tileText {
@@ -586,3 +593,34 @@ textarea {
   }
 }
 
+@media screen and (max-width: 360px) { /* Adjust the max-width as needed */
+
+  .contactBox {
+    width: 250px;
+  }
+
+  .tile {
+    width: 250px;
+    margin-top: 2%;
+  }
+
+  .tileText {
+    font-size: 8px;
+  }
+
+  .tileTitle {
+    font-size: 12px;
+  }
+
+  textarea {
+    width: 150px;
+  }
+
+  .submitButton {
+    width: 157px;
+  }
+
+
+
+
+}
