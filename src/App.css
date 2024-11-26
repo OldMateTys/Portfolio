@@ -596,11 +596,15 @@ textarea {
 @media screen and (max-width: 360px) { /* Adjust the max-width as needed */
 
   .contactBox {
-    width: 250px;
+    width: 280px;
+  }
+
+  .tileContainer {
+    margin-top: 5%;
   }
 
   .tile {
-    width: 250px;
+    width: 300px;
     margin-top: 2%;
   }
 
