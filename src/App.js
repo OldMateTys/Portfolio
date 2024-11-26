@@ -200,7 +200,7 @@ function About({aboutRef}) {
       <div className='p heading' ref={aboutRef}>About</div>
       <br />
       <div className='aboutText'>
-      This, is Tyson.
+      This is the tale of the one they call Tyson.
       <br></br><br></br>
       He is, as his friends say, a person among people. This is not such a bad thing, 
       he thinks, as he believes in the inherent good in people. He is, unfortunately, wrong.
@@ -248,7 +248,7 @@ function About({aboutRef}) {
       <br></br><br></br>
       I think he is spending too much time in the surf. We told him from the start that he should choose a lane and stay in it.
       <br></br><br></br>
-      Anyway, thanks for reading, and if you made it this far, read further idk it's your life. 
+      Anyway, thanks for reading, and if you made it this far, please reflect on your sanity. One can only stand so much inane drivel. 
       <br></br><br></br>
       <p className='it'>
       If you're interested in collaborating on a project or just want to have a chat, feel free to get 
